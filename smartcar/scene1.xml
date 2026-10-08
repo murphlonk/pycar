@@ -1,0 +1,255 @@
+<mujoco model="scene">
+  <compiler angle="radian" meshdir="assets/" texturedir="textures/"/>
+
+  <visual>
+    <map znear="0.001"/>
+  </visual>
+
+  <asset>
+    <texture type="2d" colorspace="sRGB" name="wall_tex" file="wall.png"/>
+    <material name="cone_mat" rgba="1 1 0 1"/>
+    <material name="ground_mat" rgba="0.18 0.18 0.69 1"/>
+    <material name="wall_mat" texture="wall_tex"/>
+    <mesh name="chassis" content_type="model/stl" file="car/chassis.STL"/>
+    <mesh name="wheel" content_type="model/stl" file="car/wheel.STL"/>
+    <mesh name="front_wheel" content_type="model/stl" file="car/front_wheel.STL"/>
+    <mesh name="connect" content_type="model/stl" file="car/connect.STL"/>
+    <mesh name="jlu" content_type="model/stl" file="car/jlu.STL"/>
+    <mesh name="circle50" content_type="model/stl" file="race/circle50.STL"/>
+    <mesh name="circle60" content_type="model/stl" file="race/circle60.STL"/>
+    <mesh name="circle70" content_type="model/stl" file="race/circle70.STL"/>
+    <mesh name="cone" content_type="model/stl" file="race/cone.STL"/>
+    <mesh name="cross50" content_type="model/stl" file="race/cross50.STL"/>
+    <mesh name="cross70" content_type="model/stl" file="race/cross70.STL"/>
+    <mesh name="r50a60" content_type="model/stl" file="race/r50a60.STL"/>
+    <mesh name="r50a90" content_type="model/stl" file="race/r50a90.STL"/>
+    <mesh name="r60a60" content_type="model/stl" file="race/r60a60.STL"/>
+    <mesh name="r60a90" content_type="model/stl" file="race/r60a90.STL"/>
+    <mesh name="roadblock" content_type="model/stl" file="race/roadblock.STL"/>
+    <mesh name="start" content_type="model/stl" file="race/start.STL"/>
+    <mesh name="straight" content_type="model/stl" file="race/straight.STL"/>
+  </asset>
+
+  <worldbody>
+    <geom name="floor" size="15 15 0.1" type="plane" material="ground_mat"/>
+    <geom name="wall_south" size="15 0.1 0.5" pos="0 -15 0.5" type="box" material="wall_mat"/>
+    <geom name="wall_north" size="15 0.1 0.5" pos="0 15 0.5" type="box" material="wall_mat"/>
+    <geom name="wall_west" size="0.1 15 0.5" pos="-15 0 0.5" type="box" material="wall_mat"/>
+    <geom name="wall_east" size="0.1 15 0.5" pos="15 0 0.5" type="box" material="wall_mat"/>
+    <geom name="start" pos="1 0.415 0.002" quat="0.707107 0.707107 0 0" type="mesh" rgba="0 0 0 1" mesh="start"/>
+    <geom name="block" pos="6 0.3 0.002" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0 0 0 1" mesh="roadblock"/>
+    <geom name="cone_0_0" pos="-4.14567 -0.345395 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_1_0" pos="-4.07617 -0.514081 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_2_0" pos="-4.00603 -0.682503 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_3_0" pos="-3.93455 -0.850358 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_4_0" pos="-3.86086 -1.01726 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_5_0" pos="-3.78382 -1.18263 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_6_0" pos="-3.70173 -1.34555 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_7_0" pos="-3.61167 -1.50418 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_8_0" pos="-3.50734 -1.65368 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_9_0" pos="-3.40942 -1.73486 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_10_0" pos="-3.23558 -1.68647 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_11_0" pos="-3.08419 -1.58515 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_12_0" pos="-2.94808 -1.46376 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_13_0" pos="-2.82183 -1.3321 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_14_0" pos="-2.70216 -1.1944 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_15_0" pos="-2.5869 -1.05299 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_16_0" pos="-2.47447 -0.909307 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_17_0" pos="-2.36363 -0.764393 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_18_0" pos="-2.25331 -0.619084 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_19_0" pos="-2.14251 -0.474138 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_20_0" pos="-2.03024 -0.330336 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_21_0" pos="-1.91541 -0.188567 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_22_0" pos="-1.7968 -0.0499445 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_23_0" pos="-1.67298 0.084024 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_24_0" pos="-1.54219 0.211182 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_25_0" pos="-1.40239 0.328315 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_26_0" pos="-1.25144 0.430593 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_27_0" pos="-1.08772 0.510544 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_28_0" pos="-0.91087 0.554911 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_29_0" pos="-0.730186 0.579619 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_30_0" pos="-0.54798 0.587938 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_31_0" pos="-0.365591 0.58439 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_32_0" pos="-0.183419 0.5745 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_0_1" pos="-4.65433 -0.554605 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_1_1" pos="-4.57757 -0.740843 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_2_1" pos="-4.49996 -0.92673 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_3_1" pos="-4.42059 -1.11187 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_4_1" pos="-4.33836 -1.29576 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_5_1" pos="-4.25184 -1.47765 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_6_1" pos="-4.15896 -1.65639 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_7_1" pos="-4.05661 -1.82984 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_8_1" pos="-3.9397 -1.99375 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_9_1" pos="-3.80027 -2.13871 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_10_1" pos="-3.63012 -2.24505 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_11_1" pos="-3.43369 -2.28433 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_12_1" pos="-3.23353 -2.26706 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_13_1" pos="-3.04264 -2.20392 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_14_1" pos="-2.8666 -2.10647 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_15_1" pos="-2.7054 -1.98584 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_16_1" pos="-2.55658 -1.85017 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_17_1" pos="-2.41727 -1.70471 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_18_1" pos="-2.28495 -1.55284 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_19_1" pos="-2.15759 -1.39679 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_20_1" pos="-2.03349 -1.23812 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_21_1" pos="-1.9112 -1.07806 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_22_1" pos="-1.78937 -0.917637 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_23_1" pos="-1.66665 -0.757901 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_24_1" pos="-1.54154 -0.600027 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_25_1" pos="-1.41224 -0.445579 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_26_1" pos="-1.2763 -0.296964 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_27_1" pos="-1.13004 -0.158556 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_28_1" pos="-0.967264 -0.0403563 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_29_1" pos="-0.818991 0.01247 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_30_1" pos="-0.619117 0.0359139 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_31_1" pos="-0.417738 0.0360084 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <geom name="cone_32_1" pos="-0.216581 0.0255003 0" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 0 1" mesh="cone"/>
+    <light pos="0 0 30" diffuse="0.8 0.8 0.8"/>
+    <body name="chassis" pos="0.5 0.225 0.1" quat="0.5 0.5 -0.5 -0.5">
+      <joint type="free"/>
+      <geom name="chassis" type="mesh" rgba="0.0039 0.5098 0.7765 1" mesh="chassis"/>
+      <site name="imu" pos="0.05 0.02 0.08" rgba="1 1 1 1"/>
+      <camera name="carCamera" quat="0.996195 -0.0871557 0 0" pos="0.05 0.1 0.08"/>
+      <body name="leftwheel" pos="0 -0.0225 0.1195" quat="0.707107 0 0 0.707107">
+        <joint name="left" pos="0.0325 0 0.0325" axis="0 1 0"/>
+        <geom name="leftwheel" type="mesh" rgba="1 0 0 1" mesh="wheel"/>
+      </body>
+      <body name="jlu" pos="0.015 0.02 0.1">
+        <geom name="jlu" type="mesh" rgba="1 1 1 1" mesh="jlu"/>
+      </body>
+      <body name="rightwheel" pos="0.125 -0.0225 0.1195" quat="0.707107 0 0 0.707107">
+        <joint name="right" pos="0.0325 0 0.0325" axis="0 1 0"/>
+        <geom name="rightwheel" type="mesh" rgba="0 1 1 1" mesh="wheel"/>
+      </body>
+      <body name="connect" pos="0.025 0.015 0" quat="0 0.707107 0 0.707107">
+        <joint name="connect" pos="0.025 0 0.025" axis="0 1 0"/>
+        <geom name="connect" type="mesh" rgba="1 0 1 1" mesh="connect"/>
+        <body name="front" pos="0.0208 0.0375 0.02" quat="0.707107 0.707107 0 0">
+          <joint name="front" pos="0.015 0 0.015" axis="0 1 0"/>
+          <geom name="front" type="mesh" rgba="1 1 0 1" mesh="front_wheel"/>
+        </body>
+      </body>
+    </body>
+    <body name="body1">
+      <geom name="straight_1" type="mesh" rgba="1 1 1 1" mesh="straight"/>
+      <body name="body2" pos="1 0 0">
+        <geom name="straight_2" type="mesh" rgba="1 1 1 1" mesh="straight"/>
+        <body name="body3" pos="1 0 0">
+          <geom name="r50a90__1" pos="0.725 0.725 0" quat="0 0 0 1" type="mesh" rgba="1 1 1 1" mesh="r50a90"/>
+          <body name="body4" pos="0.725 0.725 0" quat="0.707107 0 0 0.707107">
+            <geom name="r50a90_1" pos="0 0.45 0" quat="0.707107 0 0 -0.707107" type="mesh" rgba="1 1 1 1" mesh="r50a90"/>
+            <body name="body5" pos="0.275 -0.275 0" quat="0.707107 0 0 -0.707107">
+              <geom name="r50a90_2" pos="0 0.45 0" quat="0.707107 0 0 -0.707107" type="mesh" rgba="1 1 1 1" mesh="r50a90"/>
+              <body name="body6" pos="0.275 -0.275 0" quat="0.707107 0 0 -0.707107">
+                <geom name="r50a90__2" pos="0.725 0.725 0" quat="0 0 0 1" type="mesh" rgba="1 1 1 1" mesh="r50a90"/>
+                <body name="body7" pos="0.725 0.725 0" quat="0.707107 0 0 0.707107">
+                  <geom name="straight_3" type="mesh" rgba="1 1 1 1" mesh="straight"/>
+                  <body name="body8" pos="1 0 0">
+                    <geom name="straight_4" type="mesh" rgba="1 1 1 1" mesh="straight"/>
+                    <body name="body9" pos="1 0 0">
+                      <geom name="straight_5" type="mesh" rgba="1 1 1 1" mesh="straight"/>
+                      <body name="body10" pos="1 0 0">
+                        <geom name="r50a90__3" pos="0.725 0.725 0" quat="0 0 0 1" type="mesh" rgba="1 1 1 1" mesh="r50a90"/>
+                        <body name="body11" pos="0.725 0.725 0" quat="0.707107 0 0 0.707107">
+                          <geom name="straight_6" type="mesh" rgba="1 1 1 1" mesh="straight"/>
+                          <body name="body12" pos="1 0 0">
+                            <geom name="straight_7" type="mesh" rgba="1 1 1 1" mesh="straight"/>
+                            <body name="body13" pos="1 0 0">
+                              <geom name="cross50__1" pos="0 0.45 0" quat="0.707107 0 0 -0.707107" type="mesh" rgba="1 1 1 1" mesh="cross50"/>
+                              <body name="body14" pos="0.45 0.45 0" quat="0.707107 0 0 0.707107">
+                                <geom name="straight_8" type="mesh" rgba="1 1 1 1" mesh="straight"/>
+                                <body name="body15" pos="1 0 0">
+                                  <geom name="cross50_1" type="mesh" rgba="1 1 1 1" mesh="cross50"/>
+                                  <body name="body16" quat="0.707107 0 0 -0.707107">
+                                    <geom name="straight_9" type="mesh" rgba="1 1 1 1" mesh="straight"/>
+                                    <body name="body17" pos="1 0 0">
+                                      <geom name="cross70__1" pos="0 0.45 0" quat="0.707107 0 0 -0.707107" type="mesh" rgba="1 1 1 1" mesh="cross70"/>
+                                      <body name="body18" pos="0.45 0.45 0" quat="0.707107 0 0 0.707107">
+                                        <geom name="straight_10" type="mesh" rgba="1 1 1 1" mesh="straight"/>
+                                        <body name="body19" pos="1 0 0">
+                                          <geom name="cross50_2" type="mesh" rgba="1 1 1 1" mesh="cross50"/>
+                                          <body name="body20" quat="0.707107 0 0 -0.707107">
+                                            <geom name="straight_11" type="mesh" rgba="1 1 1 1" mesh="straight"/>
+                                            <body name="body21" pos="1 0 0">
+                                              <geom name="r50a90__4" pos="0.725 0.725 0" quat="0 0 0 1" type="mesh" rgba="1 1 1 1" mesh="r50a90"/>
+                                              <body name="body22" pos="0.725 0.725 0" quat="0.707107 0 0 0.707107">
+                                                <geom name="straight_12" type="mesh" rgba="1 1 1 1" mesh="straight"/>
+                                                <body name="body23" pos="1 0 0">
+                                                  <geom name="circle60_1" pos="2 0.45 0" quat="0 0 0 1" type="mesh" rgba="1 1 1 1" mesh="circle60"/>
+                                                  <body name="body24" pos="2 0 0">
+                                                    <geom name="straight_13" type="mesh" rgba="1 1 1 1" mesh="straight"/>
+                                                    <body name="body25" pos="1 0 0">
+                                                      <geom name="circle50_1" type="mesh" rgba="1 1 1 1" mesh="circle50"/>
+                                                      <body name="body26" pos="2 0 0">
+                                                        <geom name="straight_14" type="mesh" rgba="1 1 1 1" mesh="straight"/>
+                                                        <body name="body27" pos="1 0 0">
+                                                          <geom name="straight_15" type="mesh" rgba="1 1 1 1" mesh="straight"/>
+                                                          <body name="body28" pos="1 0 0">
+                                                            <geom name="r50a90__5" pos="0.725 0.725 0" quat="0 0 0 1" type="mesh" rgba="1 1 1 1" mesh="r50a90"/>
+                                                            <body name="body29" pos="0.725 0.725 0" quat="0.707107 0 0 0.707107">
+                                                              <geom name="r50a90__6" pos="0.725 0.725 0" quat="0 0 0 1" type="mesh" rgba="1 1 1 1" mesh="r50a90"/>
+                                                              <body name="body30" pos="0.725 0.725 0" quat="0.707107 0 0 0.707107">
+                                                                <geom name="straight_16" type="mesh" rgba="1 1 1 1" mesh="straight"/>
+                                                                <body name="body31" pos="1 0 0">
+                                                                  <geom name="r50a90_3" pos="0 0.45 0" quat="0.707107 0 0 -0.707107" type="mesh" rgba="1 1 1 1" mesh="r50a90"/>
+                                                                  <body name="body32" pos="0.275 -0.275 0" quat="0.707107 0 0 -0.707107">
+                                                                    <geom name="r50a90_4" pos="0 0.45 0" quat="0.707107 0 0 -0.707107" type="mesh" rgba="1 1 1 1" mesh="r50a90"/>
+                                                                    <body name="body33" pos="0.275 -0.275 0" quat="0.707107 0 0 -0.707107">
+                                                                      <geom name="straight_17" type="mesh" rgba="1 1 1 1" mesh="straight"/>
+                                                                      <body name="body34" pos="1 0 0">
+                                                                        <geom name="r50a90__7" pos="0.725 0.725 0" quat="0 0 0 1" type="mesh" rgba="1 1 1 1" mesh="r50a90"/>
+                                                                        <body name="body35" pos="0.725 0.725 0" quat="0.707107 0 0 0.707107">
+                                                                          <geom name="straight_18" type="mesh" rgba="1 1 1 1" mesh="straight"/>
+                                                                          <body name="body36" pos="1 0 0">
+                                                                            <geom name="circle70_1" type="mesh" rgba="1 1 1 1" mesh="circle70"/>
+                                                                            <body name="body37" pos="2 0 0">
+                                                                              <geom name="straight_19" type="mesh" rgba="1 1 1 1" mesh="straight"/>
+                                                                            </body>
+                                                                          </body>
+                                                                        </body>
+                                                                      </body>
+                                                                    </body>
+                                                                  </body>
+                                                                </body>
+                                                              </body>
+                                                            </body>
+                                                          </body>
+                                                        </body>
+                                                      </body>
+                                                    </body>
+                                                  </body>
+                                                </body>
+                                              </body>
+                                            </body>
+                                          </body>
+                                        </body>
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <general joint="left" biastype="affine" gainprm="0.01" biasprm="0 0 -0.01"/>
+    <general joint="right" biastype="affine" gainprm="0.01" biasprm="0 0 -0.01"/>
+  </actuator>
+
+  <sensor>
+    <accelerometer site="imu"/>
+    <gyro site="imu"/>
+  </sensor>
+</mujoco>

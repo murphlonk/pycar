@@ -1,0 +1,3 @@
+安装python
+在当前文件夹下打开命令行cmd或者powershell
+输入pip intsall -r requirements.txt
